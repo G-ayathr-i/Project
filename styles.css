@@ -1,0 +1,111 @@
+/* Default Dark Mode */
+body {
+    background: radial-gradient(circle, #0d0d0d, #1a1a1a);
+    color: #00ffcc;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Light Mode */
+body.light-mode {
+    background: radial-gradient(circle, #f4f4f4, #d9d9d9);
+    color: #222;
+}
+
+/* Title Styling */
+.title {
+    transition: color 0.3s ease-in-out;
+}
+
+/* Dark Mode - Green Title */
+body .title {
+    color: #00ffcc; /* Green used in dark mode */
+}
+
+/* Light Mode - Black Title */
+body.light-mode .title {
+    color: black;
+}
+
+/* Clipboard Container */
+#clipboard-container {
+    background-color: #1a1a1a;
+    border: 2px solid #00ffcc;
+    padding: 20px;
+    margin: 20px auto;
+    width: 160%; /* Doubled the width */
+    max-width: 1200px; /* Prevents excessive width on large screens */
+    min-height: 400px;
+    text-align: left;
+    overflow-y: auto;
+    max-height: 600px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Light Mode Clipboard */
+body.light-mode #clipboard-container {
+    background-color: white;
+    border: 2px solid #222;
+}
+
+/* Clipboard Content */
+#clipboard-content p {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Highlight only sensitive information */
+.highlight {
+    color: red;
+    font-weight: bold;
+    background-color: rgba(255, 0, 0, 0.2); /* Light red background for better visibility */
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Button Styling */
+button {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #222;
+    color: #00ffcc;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Change toggle button style in light mode */
+body.light-mode #theme-toggle {
+    background-color: #ddd;
+    color: #222;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
